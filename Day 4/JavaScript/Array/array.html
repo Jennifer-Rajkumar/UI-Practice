@@ -3,15 +3,24 @@
     <head>
         <title>Array</title>
         <script src="array.js"></script>
+        <link rel="stylesheet" href="array.css">
     </head>
     <body>
+        <div class="form">
+        <div class="input">
         <label>Size of Array</label>
-        <input type="text" id="size" name="size"/><br/><br/>
-        <lable>Array Elements</lable>
-        <input type="text" id="array" name="array"/><br/><br/>
-        <lable>Expected Sum</lable>
-        <input type="text" id="sum" name="sum"/><br/><br/>
-        <button onClick="myFunction()">Calculate</button><br/><br/>
+        <input type="text" id="size" name="size"/>
+        </div>
+        <div class="input">
+            <label>Array Elements</label>
+            <input type="text" id="array" name="array"/>
+        </div>
+        <div class="input">
+        <label>Expected Sum</label>
+        <input type="text" id="sum" name="sum"/>
+        </div>
+        <button class="cal" onClick="myFunction()">Calculate</button><br/><br/>
         <h3 id="index" name="index"></h3>
+    </div>
     </body>
 </html>
