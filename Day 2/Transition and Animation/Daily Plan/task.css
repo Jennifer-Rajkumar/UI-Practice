@@ -7,7 +7,9 @@ body {
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+    position:fixed;
     margin-top: 6%;
+    margin-left: 16%;
     gap: 10px;
 }
 
