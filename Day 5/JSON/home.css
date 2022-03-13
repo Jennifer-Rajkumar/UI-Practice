@@ -80,7 +80,7 @@
 }
 
 .Management .category {
-    color: #074185;
+    color: #0854ac;
     background-color: #d0efff;
 }
 
@@ -94,12 +94,12 @@
 }
 
 .Operations {
-    border-top-color: #c21806;
+    border-top-color: #eb3a2a;
 }
 
 .Operations .category {
-    color: #a8190b;
-    background-color: #f1bfb8;
+    color: #f02f1a;
+    background-color: #ffd1cb;
 }
 
 .Marketing {
