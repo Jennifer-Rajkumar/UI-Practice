@@ -1,0 +1,82 @@
+[
+  {
+    "id": "1",
+    "description": "Finalize the sales plan for new product marketing",
+    "category": "Management"
+  },
+  {
+    "id": "2",
+    "description": "Run sales training program for sales representatives",
+    "category": "Sales"
+  },
+  {
+    "id": "3",
+    "description": "Secure lease on new office space for expanded team",
+    "category": "Operations"
+  },
+  {
+    "id": "4",
+    "description": "Cost estimates for next year's marketing plan",
+    "category": "Marketing"
+  },
+  {
+    "id": "5",
+    "description": "Hire new operations & facilities manager",
+    "category": "Human Resources"
+  },
+  {
+    "id": "6",
+    "description": "Prepare end of year report for board of directors",
+    "category": "Management"
+  },
+  {
+    "id": "7",
+    "description": "Finalize end of quarter sales figures",
+    "category": "Finance"
+  },
+  {
+    "id": "8",
+    "description": "On-board new user from ShyNet Networks company",
+    "category": "Customer Service"
+  },
+  {
+    "id": "9",
+    "description": "Cost projections for company acquisition & impact on revenue",
+    "category": "Finance"
+  },
+  {
+    "id": "10",
+    "description": "Secure lease on new office space for expanded team",
+    "category": "Operations"
+  },
+  {
+    "id": "11",
+    "description": "Create facebook Ad campaign for product launch",
+    "category": "Marketing"
+  },
+  {
+    "id": "12",
+    "description": "Prepare the sales reports for board of directors",
+    "category": "Management"
+  },
+  {
+    "id": "13",
+    "description": "On-board new user from Respogrid Networks company",
+    "category": "Customer Service"
+  },
+  {
+    "id": "14",
+    "description": "Prepare the meeting for annual product sales",
+    "category": "Operations"
+  },
+  {
+    "id": "15",
+    "description": "Finalize the monthly salaries statement for sales man",
+    "category": "Finance"
+  },
+  {
+    "id": "16",
+    "description": "Hire new sales & marketing manager for main branch",
+    "category": "Human Resources"
+  }
+]
