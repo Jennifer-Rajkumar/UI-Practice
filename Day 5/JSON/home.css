@@ -111,11 +111,11 @@
     background-color: #b5c1fd;
 }
 
-.Human {
+.HumanResources {
     border-top-color: #ff781f;
 }
 
-.Human .category {
+.HumanResources .category {
     color: #ff6600;
     background-color: #ffd8be;
 }
@@ -129,11 +129,11 @@
     background-color: #cff5b3;
 }
 
-.Customer {
+.CustomerService {
     border-top-color: #a934bd;
 }
 
-.Customer .category {
+.CustomerService .category {
     color: #8c319c;
     background-color: #f2bcfc;
 }
