@@ -9,9 +9,10 @@ fetch('home.json')
         console.log('error: ' + err);
     });
 function appendData(data) {
-    var element = '';
+    var element = ''; 
     for (var i = 0; i < data.length; i++) {
-        element += '<div class="card '+data[i].category.split(" ")[0]+'">';
+        var className = data[i].category.replace(/\s+/g, '');
+        element += '<div class="card '+className+'">';
         element += '<div class="category">'+data[i].category+'</div>';
         element += '<div class="description">'+data[i].description+'</div>';
         element += '<div class="footer">';
