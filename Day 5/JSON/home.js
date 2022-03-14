@@ -11,7 +11,7 @@ fetch('home.json')
 function appendData(data) {
     var element = ''; 
     for (var i = 0; i < data.length; i++) {
-        var className = data[i].category.replace(/\s+/g, '');
+        var className = data[i].category.split(" ").join("");
         element += '<div class="card '+className+'">';
         element += '<div class="category">'+data[i].category+'</div>';
         element += '<div class="description">'+data[i].description+'</div>';
