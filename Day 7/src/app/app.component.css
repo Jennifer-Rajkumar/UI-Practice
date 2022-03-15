@@ -1,0 +1,85 @@
+.row {
+    padding-top: 10px;
+    padding-left: 100px;
+}
+
+.card{
+    padding: 15px;
+    font-size: 18px;
+    width: 500px;
+    min-height: 200px;
+    background: white;
+    margin-bottom: 15px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+}
+
+.card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.input-container {
+    margin: 5%;
+    display: -ms-flexbox; /* IE10 */
+    display: flex;
+    width: 100%;
+    margin-bottom: 15px;
+}
+  
+.input-field {
+    width: 100%;
+    padding: 10px;
+    outline: none;
+}
+
+.icon {
+    padding: 15px;
+    background: #4C2881;
+    color: white;
+    min-width: 50px;
+    text-align: center;
+    font-size: large;
+}
+
+.box {
+    width: 100%;
+    outline: none;
+}
+
+.items {
+    display: -ms-flexbox; /* IE10 */
+    display: inline;
+    width: 100%;
+    margin-bottom: 15px;
+  }
+  
+h5 {
+    float: left;
+    padding: 15px;
+}
+
+.btn {
+    float: right;
+}
+
+h4 {
+    text-align: center;
+}
+
+.icon1 {
+    padding: 15px;
+    font-size: large;
+    background: green;
+    color: white;
+    min-width: 50px;
+    text-align: center;
+}
+
+.icon2 {
+    padding: 15px;
+    font-size: large;
+    background: red;
+    color: white;
+    min-width: 50px;
+    text-align: center;
+}
