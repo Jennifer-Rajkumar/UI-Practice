@@ -9,19 +9,19 @@ export class NotificationService {
   
   constructor(private toastr: ToastrService) { }
   
-  showSuccess(message: string | undefined, title: string | undefined){
+  showSuccess(message: string, title: string){
       this.toastr.success(message, title)
   }
   
-  showError(message: string | undefined, title: string | undefined){
+  showError(message: string, title: string){
       this.toastr.error(message, title)
   }
   
-  showInfo(message: string | undefined, title: string | undefined){
+  showInfo(message: string, title: string){
       this.toastr.info(message, title)
   }
   
-  showWarning(message: string | undefined, title: string | undefined){
+  showWarning(message: string, title: string){
       this.toastr.warning(message, title)
   }
   
