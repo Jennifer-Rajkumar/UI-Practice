@@ -1,3 +1,26 @@
+.input-container {
+    margin: 8%;
+    display: -ms-flexbox; /* IE10 */
+    display: flex;
+    width: 100%;
+    margin-bottom: 15px;
+}
+  
+.input-field {
+    width: 100%;
+    padding: 10px;
+    outline: none;
+}
+
+.icon {
+    padding: 15px;
+    background: #4C2881;
+    color: white;
+    min-width: 50px;
+    text-align: center;
+    font-size: large;
+}
+
 .row {
     padding-top: 10px;
     padding-left: 100px;
@@ -58,6 +81,15 @@ h4 {
     padding: 15px;
     font-size: large;
     background: red;
+    color: white;
+    min-width: 50px;
+    text-align: center;
+}
+
+.icon3 {
+    padding: 15px;
+    font-size: large;
+    background: gray;
     color: white;
     min-width: 50px;
     text-align: center;
