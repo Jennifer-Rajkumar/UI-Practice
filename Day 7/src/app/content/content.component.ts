@@ -36,6 +36,11 @@ export class ContentComponent implements OnInit {
     }
 	}
 
+  public refreshList() {
+    this.pos = -1;
+    this.edit = '';
+	}
+
   public completedTask(index: number) {
     this.completed.push(this.incomplete[index]);
     this.incomplete.splice(index, 1);

@@ -21,6 +21,15 @@
     font-size: large;
 }
 
+.icon4 {
+    padding: 15px;
+    background: #ff6600;
+    color: white;
+    min-width: 50px;
+    text-align: center;
+    font-size: large;
+}
+
 .row {
     padding-top: 10px;
     padding-left: 100px;
