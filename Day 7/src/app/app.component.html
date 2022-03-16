@@ -1,41 +1,4 @@
 <!--Division for GeeksForGeeks heading-->
 <content>
-
-  <div class="input-container">
-    <input [(ngModel)]="newTask" class="input-field" type="text" placeholder="Task">
-    <button class="btn" (click)="addToList()">
-      <i class="fa fa-plus icon" aria-hidden="true"></i>
-    </button>
-  </div>
-
-  <div class="container">
-    <div class="row">
-        <div class="col-sm-6">
-          <div class="card">
-            <h4>Todo🧐</h4>
-            <div *ngFor="let x of incomplete; let index = index;">
-              <div class="items">
-                <h5>{{x}}</h5>
-                <button class="btn" (click)="completedTask(index)">
-                  <i class="fa fa-check icon1" aria-hidden="true"></i>
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-6">
-            <div class="card">
-              <h4>Completed😃</h4>
-              <div *ngFor="let x of completed; let index = index;">
-                <div class="items">
-                  <h5>{{x}}</h5>
-                  <button class="btn" (click)="incompleteTask(index)">
-                    <i class="fa fa-trash icon2" aria-hidden="true"></i>
-                  </button>
-                </div>
-              </div>
-            </div>
-        </div>
-    </div>
-  </div>	
+  <app-parent></app-parent>
 </content>
