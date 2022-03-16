@@ -13,6 +13,7 @@ export class ContentComponent implements OnInit {
   }
 
   public edit: string | undefined;
+  public pos = -1;
   
   public incomplete: string[] = [];
   public completed: string[] = [];
@@ -20,12 +21,19 @@ export class ContentComponent implements OnInit {
   public newTask: string | undefined;
 
 	public addToList() {
-		if (this.newTask == '') {
-		}
-		else if(this.newTask) {
-			this.incomplete.push(this.newTask);
-			this.newTask = '';
-		}
+    if(this.pos==-1) {
+      if(this.newTask) {
+        this.incomplete.push(this.newTask);
+        this.newTask = '';
+      }
+    }
+    else {
+      if(this.newTask) {
+        this.incomplete[this.pos] = this.newTask; 
+        this.pos = -1;
+        this.newTask = '';
+      }
+    }
 	}
 
   public completedTask(index: number) {
@@ -39,6 +47,6 @@ export class ContentComponent implements OnInit {
 
   public editTask(index: number) {
     this.edit = this.incomplete[index];
-    this.incomplete.splice(index, 1);
+    this.pos = index;
   }
 }
