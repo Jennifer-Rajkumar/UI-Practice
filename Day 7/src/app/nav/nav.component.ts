@@ -12,15 +12,14 @@ export class NavComponent implements OnInit, DoCheck {
 
   }
   ngDoCheck(): void {
-    this.count = this._todoService.getCount(this.incomplete, this.completed);
+    this.count = this._todoService.getCount(this.todos);
   }
   
   public count:any = [];
 
   ngOnInit(): void {
-    this.count = this._todoService.getCount(this.incomplete, this.completed);
+    this.count = this._todoService.getCount(this.todos);
   }
 
-  @Input() incomplete: string[] = [];
-	@Input() completed: string[] = [];
+  @Input() todos: any;
 }

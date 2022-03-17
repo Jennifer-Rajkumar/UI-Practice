@@ -1,4 +1,11 @@
 import { Component, OnInit } from '@angular/core';
+import { DateTime } from 'luxon';
+
+export interface Todos{
+  task: string,
+  time: string,
+  status: Boolean;
+}
 
 @Component({
   selector: 'app-content',
@@ -10,27 +17,35 @@ export class ContentComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    this.todoItem={} as Todos;
   }
 
   public edit: string | undefined;
   public action = 'Add Task';
   public pos = -1;
   
-  public incomplete: string[] = [];
-  public completed: string[] = [];
+  public todoItem: any;
+  todos:Todos[]=[];
 
   public newTask: string | undefined;
 
 	public addToList() {
+    this.todoItem = {} as Todos;
     if(this.pos==-1) {
       if(this.newTask) {
-        this.incomplete.push(this.newTask);
+        this.todoItem.task = this.newTask;
+        this.todoItem.time = DateTime.now().toLocaleString(DateTime.DATE_FULL);
+        this.todoItem.status = false;
+        this.todos.push(this.todoItem);
         this.newTask = '';
       }
     }
     else {
       if(this.newTask) {
-        this.incomplete[this.pos] = this.newTask;
+        this.todoItem.task = this.newTask;
+        this.todoItem.time = DateTime.now().toLocaleString(DateTime.DATE_FULL);
+        this.todoItem.status = false;
+        this.todos[this.pos] = this.todoItem;
         this.action = 'Add Task'; 
         this.pos = -1;
         this.newTask = '';
@@ -45,16 +60,15 @@ export class ContentComponent implements OnInit {
 	}
 
   public completedTask(index: number) {
-    this.completed.push(this.incomplete[index]);
-    this.incomplete.splice(index, 1);
+    this.todos[index].status = true;
   }
 
   public incompleteTask(index: number) {
-    this.completed.splice(index, 1);
+    this.todos.splice(index, 1);
   }
 
   public editTask(index: number) {
-    this.edit = this.incomplete[index];
+    this.edit = this.todos[index].task;
     this.action = 'Edit Task';
     this.pos = index;
   }
