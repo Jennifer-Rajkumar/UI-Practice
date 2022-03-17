@@ -13,6 +13,7 @@ export class ContentComponent implements OnInit {
   }
 
   public edit: string | undefined;
+  public action = 'Add Task';
   public pos = -1;
   
   public incomplete: string[] = [];
@@ -29,7 +30,8 @@ export class ContentComponent implements OnInit {
     }
     else {
       if(this.newTask) {
-        this.incomplete[this.pos] = this.newTask; 
+        this.incomplete[this.pos] = this.newTask;
+        this.action = 'Add Task'; 
         this.pos = -1;
         this.newTask = '';
       }
@@ -37,6 +39,7 @@ export class ContentComponent implements OnInit {
 	}
 
   public refreshList() {
+    this.action = 'Add Task';
     this.pos = -1;
     this.edit = '';
 	}
@@ -52,6 +55,7 @@ export class ContentComponent implements OnInit {
 
   public editTask(index: number) {
     this.edit = this.incomplete[index];
+    this.action = 'Edit Task';
     this.pos = index;
   }
 }
