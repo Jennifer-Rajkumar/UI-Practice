@@ -67,6 +67,8 @@
 h5 {
     float: left;
     padding: 15px;
+    word-wrap: break-word;
+    width: 60%;
 }
 
 .btn {
