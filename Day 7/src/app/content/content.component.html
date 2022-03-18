@@ -1,4 +1,4 @@
-<app-nav [todos]="todos"></app-nav>
+<app-nav [todos]="todos" (category)="categoryChangedHandler($event)"></app-nav>
 
 <div class="input-container">
     <input [(ngModel)]="newTask" class="input-field" type="text" value={{edit}} placeholder={{action}}>
@@ -15,7 +15,7 @@
         <div class="card">
           <h4>Todo🧐</h4>
           <div *ngFor="let x of todos; let index = index;">
-            <div *ngIf="(x.status === false)" >
+            <div *ngIf="((x.status === false) && (x.category === this.category))" >
             <div class="items">
               <h5>{{x.task | titlecase}} {{x.time}}</h5>
               <button class="btn" (click)="completedTask(index)">
@@ -33,7 +33,7 @@
           <div class="card">
             <h4>Completed😃</h4>
             <div *ngFor="let x of todos; let index = index;">
-              <div *ngIf="(x.status === true)" >
+              <div *ngIf="(x.status === true) && (x.category === this.category)" >
               <div class="items">
                 <h5>{{x.task | titlecase}} {{x.time}}</h5>
                 <button class="btn" (click)="incompleteTask(index)">

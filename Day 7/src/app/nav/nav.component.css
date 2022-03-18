@@ -6,7 +6,7 @@ nav {
 
 li{
     display: inline;
-    width: 100px;
+    min-width: 100px;
     text-align: center;
     float: right;
     font-family: Verdana;
@@ -17,4 +17,8 @@ li{
     min-width: 50px;
     text-align: center;
     font-size: 30px;
+}
+
+select {
+    height: 30px;
 }

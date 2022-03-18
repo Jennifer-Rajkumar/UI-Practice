@@ -12,5 +12,13 @@
             <i class="fa fa-list-ul icon" aria-hidden="true">
             {{count[0].total}}</i>
         </li>
+        <li>
+          <select [(ngModel)]="chosen">
+            <option value="A">Urgent and important</option>
+            <option value="B">Time sensitive but less important</option>
+            <option value="C">Important but not time sensitive</option>
+            <option value="D">Not important and not urgent</option>
+          </select>
+        </li>
     </ul>
 </nav>
