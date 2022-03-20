@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { AngularFireDatabase, AngularFireList, AngularFireObject } from '@angular/fire/compat/database';
-import { Todos } from '../data/todos';
+import { Todos } from './todos';
+import { User } from './user';
 
 @Injectable({
   providedIn: 'root'
@@ -11,6 +12,16 @@ export class CrudService {
   todoRef: AngularFireObject<any> | undefined;
   constructor(private db: AngularFireDatabase) {}
   
+  AddUser(todos: User) {
+    if(this.todosRef) {
+      this.todosRef.push({
+        email: todos.email,
+        pwd: todos.pwd,
+        todo: todos.todo
+      });
+     }
+  }
+
   AddTodo(todos: Todos) {
     if(this.todosRef) {
       this.todosRef.push({
@@ -27,13 +38,18 @@ export class CrudService {
     return this.todoRef;
   }
   
-  GetTodoList() {
-    this.todosRef = this.db.list('/todo-list');
+  GetTodoList(user: User) {
+    this.todosRef = this.db.list('/todo-list/'+user.$key+'/todo');
     return this.todosRef;
   }
   
-  UpdateTodo(todos: Todos) {
-    this.todoRef = this.GetTodo(todos.$key);
+  GetUsers() {
+    this.todosRef = this.db.list('/todo-list');
+    return this.todosRef;
+  }
+
+  UpdateTodo(todos: Todos, user: User) {
+    this.todoRef = this.GetTodo(user.$key+'/todo/'+todos.$key);
     if(this.todoRef) {
       this.todoRef.update({
         task: todos.task,
@@ -44,8 +60,8 @@ export class CrudService {
     }
   }
 
-  DeleteTodo(id: string) {
-    this.todoRef = this.db.object('todo-list/'+id);
+  DeleteTodo(id1: string, id2: string) {
+    this.todoRef = this.db.object('todo-list/'+id1+'/todo/'+id2);
     this.todoRef.remove();
   }
 }

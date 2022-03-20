@@ -16,15 +16,15 @@
           <h4>Todo🧐</h4>
           <div *ngFor="let x of todos; let index = index;">
             <div *ngIf="((x.status === false) && (x.category === this.category))" >
-            <div class="items">
-              <h5>{{x.task | titlecase}} {{x.time}}</h5>
-              <button class="btn" (click)="completedTask(index)">
-                <i class="fa fa-check icon1" aria-hidden="true"></i>
-              </button>
-              <button class="btn" (click)="editTask(index)">
-                <i class="fa fa-pencil-square-o icon3" aria-hidden="true"></i>
-              </button>
-            </div>
+              <div class="items">
+                <h5>{{x.task | titlecase}} {{x.time}}</h5>
+                <button class="btn" (click)="completedTask(index)">
+                  <i class="fa fa-check icon1" aria-hidden="true"></i>
+                </button>
+                <button class="btn" (click)="editTask(index)">
+                  <i class="fa fa-pencil-square-o icon3" aria-hidden="true"></i>
+                </button>
+              </div>
             </div>
           </div>  
         </div>

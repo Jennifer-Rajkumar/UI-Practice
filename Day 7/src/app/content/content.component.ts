@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { DateTime } from 'luxon';
 import { Todos } from '../data/todos';
 import { CrudService } from '../data/crud.service';
+import { Input } from '@angular/core';
+import { User } from '../data/user';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-content',
@@ -10,11 +13,18 @@ import { CrudService } from '../data/crud.service';
 })
 export class ContentComponent implements OnInit {
 
-  constructor(public crudApi: CrudService) { }
+  constructor(public crudApi: CrudService, private router: Router) { }
 
   ngOnInit(): void {
+    if(history.state.data) {
+      this.user = history.state.data;
+    }
+    if(!this.user) {
+      this.router.navigate(['/']);
+    }
+    console.log(this.user);
     this.todoItem={} as Todos;
-    let s = this.crudApi.GetTodoList(); 
+    let s = this.crudApi.GetTodoList(this.user); 
     s.snapshotChanges().subscribe(data => {
       this.todos = [];
       data.forEach(item => {
@@ -31,6 +41,7 @@ export class ContentComponent implements OnInit {
   
   public todoItem: any;
   todos:Todos[]=[];
+  public user: any;
 
   public category: string | undefined;
   public newTask: string | undefined;
@@ -55,7 +66,8 @@ export class ContentComponent implements OnInit {
         this.todoItem.time = DateTime.now().toLocaleString(DateTime.DATE_FULL);
         this.todoItem.category = this.category;
         this.todoItem.status = false;
-        this.crudApi.UpdateTodo(this.todoItem);
+        this.crudApi.UpdateTodo(this.todoItem, this.user);
+        console.log(this.todoItem);
 
         this.action = 'Add Task'; 
         this.pos = -1;
@@ -66,6 +78,7 @@ export class ContentComponent implements OnInit {
 
   public refreshList() {
     this.action = 'Add Task';
+    this.newTask = '';
     this.pos = -1;
     this.edit = '';
 	}
@@ -73,12 +86,12 @@ export class ContentComponent implements OnInit {
   public completedTask(index: number) {
     this.todoItem = this.todos[index];
     this.todoItem.status = true;
-    this.crudApi.UpdateTodo(this.todoItem);
+    this.crudApi.UpdateTodo(this.todoItem, this.user);
   }
 
   public incompleteTask(index: number) {
     this.todoItem = this.todos[index];
-    this.crudApi.DeleteTodo(this.todoItem.$key);
+    this.crudApi.DeleteTodo(this.user.$key, this.todoItem.$key);
   }
 
   public editTask(index: number) {

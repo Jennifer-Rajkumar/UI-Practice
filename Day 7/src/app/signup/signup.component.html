@@ -1,0 +1,23 @@
+<div class="signup-card">
+    <div class="left">
+      <img src="https://img.freepik.com/free-vector/man-standing-flipchart-with-list_1262-19830.jpg" width="350" height="350" />
+    </div>
+    <div class="right">
+      <h3>Sign Up</h3>
+      <div class="input-container">
+        <input [(ngModel)]="email" class="input-field" type="text" placeholder="Email ID"/>
+      </div>
+      <div class="input-container">
+        <input [(ngModel)]="pwd" class="input-field" type="text" placeholder="Password"/>
+      </div>
+      <div class="input-container">
+        <input [(ngModel)]="confirm_pwd" class="input-field" type="text" placeholder="Confirm Password"/>
+      </div>
+      <div class="input-container">
+        <button class="input-field btn2" (click)="addToList()" >Signup</button>
+      </div>
+      <div class="input-container">
+        <a href="/">Existing user? Signin</a>
+      </div>
+    </div>
+</div>
