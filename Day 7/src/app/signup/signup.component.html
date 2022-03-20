@@ -12,7 +12,7 @@
             <div *ngIf="requiredForm.controls['email'].errors?.['required']">
               Email is required
             </div>
-            <div *ngIf="requiredForm.controls['email'].errors?.['pattern']">
+            <div *ngIf="requiredForm.controls['email'].errors?.['email']">
               Invalid email
             </div>
           </div>

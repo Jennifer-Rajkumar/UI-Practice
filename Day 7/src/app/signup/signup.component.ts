@@ -19,7 +19,7 @@ export class SignupComponent implements OnInit {
 
   myForm() {
     this.requiredForm = this.formBuilder.group({
-      email: ['', [Validators.required, Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$")] ],
+      email: ['', [Validators.required, Validators.email] ],
       pwd: ['', [Validators.required, Validators.pattern("^(?=.*[a-zA-Z])(?=.*[0-9])(?=.*[@$!%*#?&]).{8,}$")]],
       confirm_pwd: ['',[Validators.required]]
     }, { validators: this.checkPasswords });
