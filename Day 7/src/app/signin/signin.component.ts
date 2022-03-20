@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { CrudService } from '../data/crud.service';
 import { User } from '../data/user';
@@ -30,11 +31,15 @@ export class SigninComponent implements OnInit {
   public email: string = '';
   public pwd: string = '';
   public path: string = '';
+  public error: string = '';
 
   public validate() {
     this.user = this.users.find(e => (e.email === this.email && e.pwd === this.pwd));
     if(this.user) {
       this.router.navigateByUrl('/todo', {state: { data: this.user}});
+    }
+    else {
+      this.error = "Invalid credentials";
     }
 	}
 }
