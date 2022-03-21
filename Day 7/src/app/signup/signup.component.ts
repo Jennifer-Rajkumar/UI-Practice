@@ -4,6 +4,7 @@ import { User } from '../data/user';
 import { Todos } from '../data/todos';
 import { Router } from '@angular/router';
 import { AbstractControl, FormBuilder, FormGroup, ValidationErrors, ValidatorFn, Validators } from '@angular/forms';
+import { UserService } from '../service/user.service';
 
 @Component({
   selector: 'app-signup',
@@ -13,7 +14,7 @@ import { AbstractControl, FormBuilder, FormGroup, ValidationErrors, ValidatorFn,
 export class SignupComponent implements OnInit {
   
   requiredForm!: FormGroup;
-  constructor(public crudApi: CrudService, private router: Router, private formBuilder:FormBuilder) { 
+  constructor(public crudApi: CrudService, public userService: UserService, private router: Router, private formBuilder:FormBuilder) { 
     this.myForm();
   }
 
@@ -55,22 +56,11 @@ export class SignupComponent implements OnInit {
   }
 
   public addToList() {
-    this.error = 0;
-    Object.keys(this.requiredForm.controls).forEach(key => {
-      const controlErrors: any = this.requiredForm.get(key)?.errors;
-      if (controlErrors != null) {
-        Object.keys(controlErrors).forEach(keyError => {
-          console.log('Key control: ' + key + ', keyError: ' + keyError + ', err value: ', controlErrors[keyError]);
-          this.error++;
-        });
-      }
-    });
-    this.isUser = this.users.find(e => e.email === this.email);
-    if(this.isUser) {
+    this.errormsg = '';
+    if(this.userService.checkUser(this.email)) {
       this.errormsg = "Account already exists!";
-      return;
     }
-    if(this.error==0 && !this.requiredForm.hasError('notSame')) {
+    else if(!this.userService.checkError(this.requiredForm) && !this.requiredForm.hasError('notSame')) {
       this.user = {} as User;
       if(this.email == '' || this.pwd == '') {}
       else {
@@ -82,5 +72,4 @@ export class SignupComponent implements OnInit {
       }
     }
 	}
-
 }
