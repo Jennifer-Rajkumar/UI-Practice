@@ -1,0 +1,24 @@
+nav {
+    position: relative;
+    top:0;
+    width:100%;
+}
+
+li{
+    display: inline;
+    min-width: 100px;
+    text-align: center;
+    float: right;
+    font-family: Verdana;
+}
+
+.icon {
+    color: white;
+    min-width: 50px;
+    text-align: center;
+    font-size: 30px;
+}
+
+select {
+    height: 30px;
+}

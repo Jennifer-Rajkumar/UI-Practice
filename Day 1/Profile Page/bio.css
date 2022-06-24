@@ -1,0 +1,116 @@
+.active{
+  background-color:black;
+  color:white;
+}
+nav {
+  position: relative;
+  top:0;
+  width:100%;
+}
+a {
+  display:block;
+  padding-top: 10px;
+}
+
+h1 {
+  float: left;
+  margin-top: 0px;
+  margin-left: 15px;
+  font-family: Verdana;
+}
+
+li{
+  display: inline;
+  width: 100px;
+  text-align: center;
+  float: right;
+  font-family: Verdana;
+}
+
+.btn {
+  border: 2px solid black;
+  background-color: white;
+  padding: 10px 10px;
+}
+
+.default {
+  border-color: gray;
+  border-radius: 8px;
+  color: black;
+  font-family: Verdana;
+}
+
+.active {
+  color: #ffa90a;
+  font-weight: bold;
+  background-color: white;
+}
+
+.content {
+  margin-top: 150px;
+  margin-left: -120px;
+  line-height: 30px;
+  width: 60%;
+  float:left;
+}
+
+.image {
+  margin-top: 30px;
+  width: 30%;
+  float:left;
+}
+
+.profile {
+  width: 420px;
+  height: 440px;
+}
+
+.icon {
+  display: grid;
+  grid-template-columns: auto auto auto auto auto;
+  grid-gap: 10px;
+}
+
+.imagesize {
+  padding-left: 20px; 
+  width: 70px;
+  height: 50px;
+}
+
+.first {
+  font-size: 60px;
+  font-family: Trebuchet MS;
+  font-weight: bold;
+}
+
+.second {
+  font-size: 60px;
+  font-family: Trebuchet MS;
+  font-weight: bold;
+  color: #ffa90a;
+}
+
+.third {
+  font-size: 20px;
+  font-family: Trebuchet MS;
+  font-weight: bold;
+  color: gray;
+}
+
+.button1 {
+  width: 175px;
+  height: 50px;
+  background-color: #ffa90a;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 30px; 
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.emoji {
+  width: 85px;
+  height: 85px;
+  margin-left: -125px;
+}
